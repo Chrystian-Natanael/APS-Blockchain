@@ -1,4 +1,4 @@
-CXX := c
+CXX := cc
 
 # Directories
 SRCDIR := src
