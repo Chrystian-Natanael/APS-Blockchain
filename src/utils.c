@@ -17,9 +17,20 @@ void free_list(BottleNode *head) {
 // 	//! Implementar
 // }
 
-// BottleNode* find_bottle(BottleNode *head, const char *hash) {
-// 	//! Implementar
-// }
+// ? by lana
+BottleNode* find_bottle(BottleNode *head, const char *hash) {
+
+  BottleNode *current = head;
+  while (current!= NULL) {
+    if (strcmp(current->hash, hash) == 0) {
+      return current;
+    }
+    current = current->next;
+  }
+  return NULL;
+
+}
+// ? by lana
 
 // void print_bottle(BottleNode *node) {
 // 	//! Implementar
