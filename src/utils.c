@@ -12,10 +12,29 @@ void free_list(BottleNode *head) {
 		free(tmp);
 	}
 }
+//maria
+void recycle_bottle(BottleNode **head, const char *existing_hash, const char *description) {
+    BottleNode *bottle = find_bottle(*head, existing_hash);
 
-// void recycle_bottle(BottleNode **head, const char *existing_hash, const char *description) {
-// 	//! Implementar
-// }
+    if (bottle != NULL) {
+        strncpy(bottle->description, description, sizeof(bottle->description) - 1);
+        bottle->description[sizeof(bottle->description) - 1] = '\0'; // Garante que a string seja terminada corretamente
+    } else {
+    	BottleNode *new_bottle = (BottleNode *)malloc(sizeof(BottleNode));
+        if (new_bottle == NULL) {
+            fprintf(stderr, "Erro ao alocar memória para nova garrafa.\n");
+            return;
+        }
+        generate_hash(new_bottle->hash);
+
+        strncpy(new_bottle->description, description, sizeof(new_bottle->description) - 1);
+        new_bottle->description[sizeof(new_bottle->description) - 1] = '\0'; 
+
+        new_bottle->next = *head;
+        *head = new_bottle;
+    }
+}
+//maria
 
 // ? by lana
 BottleNode* find_bottle(BottleNode *head, const char *hash) {
