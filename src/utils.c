@@ -12,7 +12,7 @@ void free_list(BottleNode *head) {
 		free(tmp);
 	}
 }
-//maria
+//mariaa
 void recycle_bottle(BottleNode **head, const char *existing_hash, const char *description) {
     BottleNode *bottle = find_bottle(*head, existing_hash);
 
@@ -34,7 +34,7 @@ void recycle_bottle(BottleNode **head, const char *existing_hash, const char *de
         *head = new_bottle;
     }
 }
-//maria
+//mariaa
 
 // ? by lana
 BottleNode* find_bottle(BottleNode *head, const char *hash) {
