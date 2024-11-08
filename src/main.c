@@ -45,6 +45,7 @@ int main() {
 				fgets(existing_hash, sizeof(existing_hash), stdin);
 				existing_hash[strcspn(existing_hash, "\n")] = '\0';
 				print_history_pet(bottle_history, existing_hash);
+				break;
 			case 0:
 				printf("Saindo...\n");
 				break;
